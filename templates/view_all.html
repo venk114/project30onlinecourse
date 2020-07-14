@@ -1,0 +1,28 @@
+{% extends 'common.html' %}
+{% block venkat %}
+    <table border="2">
+        <tr>
+            <th colspan="6" style="text-align: center">
+                view_all_Course
+            </th>
+        </tr>
+        <tr>
+            <th>name</th>
+            <th>facuilty</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Fee</th>
+            <th>Duration</th>
+        </tr>
+        {% for x in object_list %}
+        <tr>
+            <th>{{ x.Name}}</th>
+            <th>{{ x.Faculty}}</th>
+            <th>{{  x.Date}}</th>
+            <th>{{x.Time}}</th>
+            <th>{{x.Fee}}</th>
+            <th>{{ x.Duration}}</th>
+        </tr>
+    {% endfor %}
+    </table>
+ {% endblock %}
