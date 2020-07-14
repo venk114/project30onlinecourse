@@ -24,5 +24,7 @@ urlpatterns = [
     path('login_check/',views.LoginCheck.as_view(),name="login_check"),
     path('new_class/',views.NewClass.as_view(),name="new_class"),
     path('view_all/',views.AllCourse.as_view(),name="view_all"),
-    path('home/',views.Home.as_view(),name="home")
+    path('home/',views.Home.as_view(),name="home"),
+    path('upd_class<int:pk>/',views.UpdCourse.as_view(),name="upd_class"),
+    path('del_class<int:pk>/',views.DelCourse.as_view(),name="del_class"),
 ]

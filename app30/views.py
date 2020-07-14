@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView,View,CreateView,ListView
+from django.views.generic import TemplateView,View,CreateView,ListView,UpdateView,DeleteView
 from django.http import HttpResponse
 from app30.models import ScheduleNewClass
 
@@ -27,3 +27,15 @@ class AllCourse(ListView):
     model = ScheduleNewClass
 class Home(TemplateView):
     template_name = "home.html"
+
+class UpdCourse(UpdateView):
+    template_name = "upd_course.html"
+    model = ScheduleNewClass
+    fields = "__all__"
+    success_url = "/view_all/"
+
+
+class DelCourse(DeleteView):
+    template_name = "del_course.html"
+    model = ScheduleNewClass
+    success_url = "/view_all/"

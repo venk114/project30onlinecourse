@@ -1,0 +1,45 @@
+{% extends 'common.html' %}
+{% block venkat %}
+    <table>
+        <tr>
+            <th>Delete course Details</th>
+        </tr>
+        <tr>
+            <th>coursename</th>
+            <th>{{ object.name }}</th>
+        </tr><tr>
+            <th>Facuiltyname</th>
+            <th>{{ object.facuilty }}</th>
+        </tr>
+    </tr><tr>
+            <th>Date</th>
+            <th>{{ object.Date }}</th>
+        </tr>
+    </tr><tr>
+            <th>Time</th>
+            <th>{{ object.Time }}</th>
+        </tr>
+    </tr><tr>
+            <th>Fee</th>
+            <th>{{ object.Fee }}</th>
+        </tr>
+    </tr><tr>
+            <th>days</th>
+            <th>{{ object.Duration }}</th>
+        </tr>
+        <tr>
+            <th>
+                <form method="post">
+                    {% csrf_token %}
+                <button type="submit">yes</button>
+                </form>
+            </th>
+            <th>
+                <form  action="{% url 'view_all' %}">
+                    <button type="submit">No</button>
+                </form>
+            </th>
+        </tr>
+
+    </table>
+{% endblock %}

@@ -1,27 +1,39 @@
 {% extends 'common.html' %}
 {% block venkat %}
-    <table border="2">
+    {% load static %}
+     <table border="2">
         <tr>
             <th colspan="6" style="text-align: center">
                 view_all_Course
             </th>
         </tr>
         <tr>
+
             <th>name</th>
             <th>facuilty</th>
             <th>Date</th>
             <th>Time</th>
             <th>Fee</th>
             <th>Duration</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
         {% for x in object_list %}
         <tr>
             <th>{{ x.Name}}</th>
             <th>{{ x.Faculty}}</th>
-            <th>{{  x.Date}}</th>
+            <th>{{ x.Date}}</th>
             <th>{{x.Time}}</th>
             <th>{{x.Fee}}</th>
             <th>{{ x.Duration}}</th>
+            <th><a href="{% url 'upd_class' x.id %}">
+                Yes
+            </a>
+            </th>
+            <th>
+                <a href="{% url 'del_class' x.id %}">Yes
+                </a>
+            </th>
         </tr>
     {% endfor %}
     </table>
